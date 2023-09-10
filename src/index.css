@@ -57,6 +57,7 @@ header .shop-cart {
 	top: 30px;
 	right: 0px;
 	width: 450px;
+	padding: 10px;
 	background: #fafafa;
 	-webkit-box-shadow: 4px 5px 15px -7px #606060;
 	box-shadow: 4px 5px 15px -7px #606060;
@@ -67,6 +68,7 @@ header .shop-cart .empty{
 	margin: 10px;
 	font-weight: 20px;
 	font-weight: 600;
+	background: #fafafa;
 }
 
 header .shop-cart .item{
@@ -113,6 +115,7 @@ header .shop-cart .summa {
 	font-weight: 600;
 	font-size: 20px;
 	margin-bottom: 20px;
+	background: #fafafa;
 }
 
 header .presentation{
@@ -152,6 +155,26 @@ footer{
 	text-align: center;
 	margin-top: 50px;
 }
+
+.categories div {
+	display: inline-block;
+	background: #f2f2f2;
+	border-radius: 50px;
+	padding: 10px 20px;
+	margin-bottom: 25px;
+	margin-right: 15px;
+	cursor: pointer;
+	text-transform: capitalize;
+	border: 1px solid transparent;
+	transition: all 500ms ease;
+}
+
+.categories div:hover {
+	border-color: silver;
+	transform: scale(1.1);
+}
+
+
 main {
 	display: flex;
 	width: 100%;
@@ -169,29 +192,33 @@ main .item {
 	padding-bottom: 20px;
 }
 
-main .item img {
+main .item img,
+.full-item img{
 	width: 100%;
 	border-radius: 10px 10px 0 0;
 	transition: transform 500ms ease;
+	cursor: pointer;
 }
 
-main .item img:hover {
+main .item img:hover,
+.full-item img:hover {
 	transform: scale(1.05);
 }
 
-main h2,
-main p,
-main b {
+main h2, main p,
+.full-item h2, .full-item p {
 	margin: 10px 20px;
 	color: #333;
 	background: #f5f5f5;
 }
 
-main .price {
+main .price,
+.full-item .price {
 	color: #5fa36a;
 }
 
-main .add-to-cart {
+main .add-to-cart,
+.full-item .add-to-cart {
 	position: absolute;
 	right: 20px;
 	bottom: 20px;
@@ -207,8 +234,28 @@ main .add-to-cart {
 	transition: transform 500ms ease;
 }
 
-main .add-to-cart:hover {
+main .add-to-cart:hover
+.full-item .add-to-cart:hover {
 	transform: scale(1.5) translateY(-5px);
+}
+
+.full-item{
+	position: fixed;
+	z-index: 1000;
+	overflow: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.full-item > div {
+	position: relative;
+	width: 600px;
+	margin: 10% auto;
+	padding: 40px 30px;
+	background: #f5f5f5;
 }
 
 footer {
